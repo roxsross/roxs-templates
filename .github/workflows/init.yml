@@ -1,0 +1,17 @@
+
+name: init
+
+on:
+  workflow_call:
+jobs:
+  init:
+    name: Install Dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4.2.0
+        with:
+          node-version: 21
+      - name: instalar dependencias
+        run: npm install
