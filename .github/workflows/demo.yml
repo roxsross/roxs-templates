@@ -2,11 +2,7 @@
 name: demo github actions
 
 on:
-  push:
-    branches: [ "devops-simple-node1" ]
-  pull_request:
-    branches: [ "devops-simple-node1" ]
-  workflow_dispatch:
+  workflow_call:
 env:
   REGISTRY : ${{ secrets.DOCKER_USERNAME }}
   REPOSITORY: ${{github.event.repository.name}}
